@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anti-overfitting-detector"
+version = "0.1.0"
+description = "Robust AI Text Detection Ensemble (RAID Benchmark SOTA) with GPU CUDA acceleration and Conservative Robust-Veto fusion"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.27.0",
+    "accelerate>=0.20.0",
+    "pydantic>=2.0.0",
+    "rich>=13.0.0"
+]
+
+[project.scripts]
+anti-overfitting-detector = "anti_overfitting_detector.cli:main"
+ai-detector = "anti_overfitting_detector.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
